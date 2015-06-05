@@ -12,16 +12,19 @@
     </tr>
   </thead>
   <tbody>
-<%= for customer <- @customers do %>
-    <tr>
-
-      <td class="text-right">
-        <%= link "Show", to: customer_path(@conn, :show, customer), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: customer_path(@conn, :edit, customer), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: customer_path(@conn, :delete, customer), method: :delete, class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
+    <%= for customer <- @customers do %>
+        <tr>
+          <td><%= customer.name %></td>
+          <td><%= customer.email %></td>
+          <td><%= customer.bio %></td>
+          <td><%= customer.age %></td>
+          <td class="text-right">
+            <%= link "Show", to: customer_path(@conn, :show, customer), class: "btn btn-default btn-xs" %>
+            <%= link "Edit", to: customer_path(@conn, :edit, customer), class: "btn btn-default btn-xs" %>
+            <%= link "Delete", to: customer_path(@conn, :delete, customer), method: :delete, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+    <% end %>
   </tbody>
 </table>
 
