@@ -1,4 +1,5 @@
-# PhoenixCustomers
+# phoenix-crud
+Elixir phoenix CRUD app.
 
 To start your new Phoenix application:
 
