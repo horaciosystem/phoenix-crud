@@ -1,0 +1,28 @@
+<h2>Listing customers</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Age</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for customer <- @customers do %>
+    <tr>
+
+      <td class="text-right">
+        <%= link "Show", to: customer_path(@conn, :show, customer), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: customer_path(@conn, :edit, customer), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: customer_path(@conn, :delete, customer), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New customer", to: customer_path(@conn, :new) %>
